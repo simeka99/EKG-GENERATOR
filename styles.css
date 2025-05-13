@@ -1,0 +1,272 @@
+body
+{
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #e6f0fa 0%, #b3c6e7 100%);
+    padding: 2rem;
+    color: #2d3748;
+    min-height: 100vh;
+}
+
+.container
+{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1
+{
+    font-weight: 700;
+    color: #1a3c6e;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Control Panel */
+.control-panel
+{
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.control-panel:hover
+{
+    transform: translateY(-4px);
+}
+
+.control-panel .btn
+{
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 0.6rem 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.control-panel .btn:hover
+{
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary
+{
+    background: #1a73e8;
+    border: none;
+}
+
+.btn-success
+{
+    background: #34c759;
+    border: none;
+}
+
+.btn-danger
+{
+    background: #ff3b30;
+    border: none;
+}
+
+.btn-info
+{
+    background: #00c4b4;
+    border: none;
+}
+
+.btn-group .dropdown-menu
+{
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.dropdown-item:hover
+{
+    background: #e6f0fa;
+    color: #1a73e8;
+}
+
+/* Canvas */
+canvas
+{
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 1;
+    transition: transform 0.3s ease;
+}
+
+canvas:hover
+{
+    transform: scale(1.01);
+}
+
+/* Plotly Chart */
+#ecg_chart
+{
+    width: 100%;
+    max-width: 100%;
+    min-height: 300px;
+    aspect-ratio: 2 / 1;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Modal */
+.modal-content
+{
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header
+{
+    background: #1a73e8;
+    color: #fff;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    padding: 1.2rem;
+}
+
+.modal-title
+{
+    font-weight: 600;
+}
+
+.form-label
+{
+    font-weight: 500;
+    color: #1a3c6e;
+}
+
+.form-control,
+.form-select
+{
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus
+{
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2);
+    outline: none;
+}
+
+.modal-footer .btn
+{
+    border-radius: 8px;
+    padding: 0.6rem 1.4rem;
+}
+
+/* Tooltip */
+.tooltip-inner
+{
+    background: #1a3c6e;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+}
+
+.tooltip.bs-tooltip-top .tooltip-arrow::before
+{
+    border-top-color: #1a3c6e;
+}
+
+/* Responsive Design */
+@media (max-width: 992px)
+{
+    body
+    {
+        padding: 1.5rem;
+    }
+
+    h1
+    {
+        font-size: 2rem;
+    }
+
+    #ecg_chart,
+    canvas
+    {
+        min-height: 250px;
+        aspect-ratio: 3 / 2;
+    }
+}
+
+@media (max-width: 768px)
+{
+    body
+    {
+        padding: 1rem;
+    }
+
+    h1
+    {
+        font-size: 1.8rem;
+    }
+
+    .control-panel
+    {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .control-panel .btn
+    {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+    }
+
+    #ecg_chart,
+    canvas
+    {
+        min-height: 200px;
+        aspect-ratio: 4 / 3;
+    }
+
+    .modal-dialog
+    {
+        margin: 1rem;
+    }
+}
+
+@media (max-width: 576px)
+{
+    h1
+    {
+        font-size: 1.5rem;
+    }
+
+    .control-panel
+    {
+        padding: 1rem;
+    }
+
+    #ecg_chart,
+    canvas
+    {
+        min-height: 150px;
+        aspect-ratio: 5 / 4;
+    }
+}
